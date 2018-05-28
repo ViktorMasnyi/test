@@ -1,14 +1,17 @@
 import React from 'react';
+import dateConvert from '../../helpers/dateConvert'
 
 import './Post.css';
 
 const post = (props) => (
-    <article className="Post" onClick={props.clicked}>
-        <h1>{props.title}</h1>
-        <div className="Info">
+    <tr className="Post" onClick={props.clicked}>
+        <td>{props.title}</td>
+        <td className="Info">
             <div className="Author">{props.author}</div>
-        </div>
-    </article>
+        </td>
+        <td><a href={props.url}>link to article</a></td>
+        <td>{dateConvert(props.createdAt)}</td>
+    </tr>
 );
 
 export default post;

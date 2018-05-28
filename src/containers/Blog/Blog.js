@@ -18,11 +18,12 @@ class Blog extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://jsonplaceholder.typicode.com/posts')
+        axios.get('https://hn.algolia.com/api/v1/search_by_date?tags=story')
             .then(responce => {
-                const post = responce.data.slice(0, 3);
-                const updatedPost = post.map(el => { return {...el, author: 'Mas'}})
-                this.setState({posts: updatedPost})})
+                const post = responce.data.hits;
+                console.log(post);
+                //const updatedPost = post.map(el => { return {...el, author: 'Mas'}})
+                this.setState({posts: post})})
             .catch(error => {
                 //alert(error)
                 this.setState({error: true})
@@ -34,26 +35,30 @@ class Blog extends Component {
             posts = this.state.posts.map(post => {
                 return (
                     <Post 
-                        key={post.id} 
+                        key={post.objectID} 
                         title={post.title} 
-                        author={post.author} 
+                        author={post.author}
+                        url={post.url}
+                        createdAt={post.created_at_i}
                         clicked={() => this.postSelectedHandler(post.id)} />
                 );
             })
         }
         
         return (
-            <div>
-                <section className="Posts">
+            <table className="Posts">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Link</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
                     {posts}
-                </section>
-                <section>
-                    <FullPost id={this.state.selectedPostid}/>
-                </section>
-                <section>
-                    <NewPost />
-                </section>
-            </div>
+                </tbody>
+            </table>
         );
     }
 }
