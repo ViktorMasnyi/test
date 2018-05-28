@@ -1,0 +1,15 @@
+.rawPost {
+  padding: 10px;
+}
+
+.rawPost__content {
+  margin: 20px;
+  word-wrap: break-word;
+}
+
+.rawPost__dismiss {
+  margin: 10px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
