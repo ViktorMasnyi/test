@@ -14,7 +14,12 @@ class Blog extends Component {
     };
 
     postSelectedHandler = (id)  => {
+        console.log('postId', id);
         this.setState({selectedPostid: id})
+    }
+
+    postDismissHandler = () => {
+        this.setState({selectedPostid: null})
     }
 
     componentDidMount() {
@@ -40,25 +45,27 @@ class Blog extends Component {
                         author={post.author}
                         url={post.url}
                         createdAt={post.created_at_i}
-                        clicked={() => this.postSelectedHandler(post.id)} />
+                        clicked={() => this.postSelectedHandler(post.objectID)} />
                 );
             })
         }
         
         return (
-            <table className="Posts">
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Author</th>
-                        <th>Link</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {posts}
-                </tbody>
-            </table>
+            <div className="container">
+                <table className="Posts">
+                    <thead className="Post">
+                        <tr>
+                            <th className="post__title">Title</th>
+                            <th className="post__author">Author</th>
+                            <th className="post__link">Link</th>
+                            <th className="post__date">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {posts}
+                    </tbody>
+                </table>
+            </div>
         );
     }
 }

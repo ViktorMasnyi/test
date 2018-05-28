@@ -1,7 +1,7 @@
-.Post {
-    width: 250px;
+.post {
+    width: 80%;
     padding: 16px;
-    text-align: center;
+    text-align: left;
     border: 1px solid #eee;
     box-shadow: 0 2px 3px #ccc;
     margin: 10px;
@@ -9,12 +9,28 @@
     cursor: pointer;
 }
 
-.Post:hover,
-.Post:active {
+.post:hover,
+.post:active {
     background-color: #C0DDF5;
 }
 
-.Author {
+.post__title {
+    width: 300px;
+    padding: 5px;
+}
+
+.post__author {
+    width: 60px;
     margin: 16px 0;
-    color: #ccc;
+    color: #ea1;
+}
+
+.post__link {
+    width: 100px;
+    text-align: center;
+}
+
+.post__date {
+    width: 120px;
+    text-align: center;
 }
