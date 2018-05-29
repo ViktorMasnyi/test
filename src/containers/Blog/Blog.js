@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import Post from '../../components/Post/Post';
-import FullPost from '../../components/FullPost/FullPost';
-import NewPost from '../../components/NewPost/NewPost';
 import Modal from '../../components/UI/Modal/Modal';
 import RawPost from '../../components/RawPost/RawPost';
 import './Blog.css';
@@ -37,7 +35,6 @@ class Blog extends Component {
     }
 
     handleSearchReset = (event) => {
-        //event.preventDefault();
         this.setState({isSearchActive: false})
     }
 
@@ -55,7 +52,7 @@ class Blog extends Component {
 
     componentDidMount() {
         this.getContent();      
-        let timer = setInterval(this.getContent, 2000);
+        let timer = setInterval(this.getContent, 10000);
         this.setState({timer});        
     };
 

@@ -17,12 +17,12 @@
 .post__title {
     width: 300px;
     padding: 5px;
+    word-wrap: normal;
 }
 
 .post__author {
     width: 60px;
     margin: 16px 0;
-    color: #ea1;
 }
 
 .post__link {
