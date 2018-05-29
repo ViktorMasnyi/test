@@ -1,3 +1,6 @@
 .wrapper {
-  color: red;
+  width: 750px;
+  height: 100vh;
+  /* border: 1px solid black; */
+  margin: 0 auto;
 }

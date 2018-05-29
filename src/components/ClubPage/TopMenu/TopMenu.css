@@ -1,0 +1,37 @@
+.topMenu__wrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+
+.topMenu__item {
+  height: 150px;
+  width: 25%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.topMenu__item:hover {
+  background-color: #ddd;
+  transition: all 0.5s ease-out;
+  
+
+}
+
+.top__menu-title {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.topMenu__image {
+  width: 80px;
+  margin: 0 auto 10px;
+}
+
+.topMenu__link, .topMenu__link:visited {
+  text-decoration: none;  
+}

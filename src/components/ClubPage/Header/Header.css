@@ -1,0 +1,23 @@
+.header {
+  height: 150px;
+  background: #ccc;
+}
+
+.logo {
+  height: 100%;
+}
+
+.logo__image {
+  height: 100%;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+}

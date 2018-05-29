@@ -1,0 +1,42 @@
+.contacts__wrapper {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  align-items: flex-start;
+  background-color: #052c48;
+}
+
+.contacts__logo {
+  height: 50%;
+  margin-top: 70px;
+}
+
+.logo__image {
+  height: 100%;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+}
+
+.contacts__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+}
+
+.contacts__email, .contacts__email:visited {
+  color: #fff;
+  font-size: 32px;
+  text-decoration: none;
+  margin-top: 25px;
+}
+
+.contacts__phone {
+  color: #fff;
+  font-size: 58px;
+  margin-top: 25px;
+}

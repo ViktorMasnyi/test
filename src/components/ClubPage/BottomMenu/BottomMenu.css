@@ -1,0 +1,53 @@
+.bottomMenu__wrapper {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  background-color: #052c48;
+}
+
+.bottomMenu__item {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between; 
+  height: 75px;
+  width: 100%;
+}
+
+.bottomMenu__item:hover {
+  background-color: #999;
+  color: #fff;
+  transition: all 0.5s ease-out;
+}
+
+.bottomMenu__title {  
+  color: #fff;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-left: 80px;
+}
+
+.bottomMenu__button {
+  border: none;
+  outline: none;
+  margin-right: 80px;
+  background: transparent;
+  color: #fff;
+  font-size: 52px;
+}
+
+/* .bottomMenu__button::before {
+  position:absolute;
+  top: 10px;
+  left: 5px;
+  background: url("../../../images/plus.png") no-repeat center center;
+  width: 32px;
+  height: 32px;
+} */
+
+.bottomMenu__link, .bottomMenu__link:visited {
+  text-decoration: none;  
+}
