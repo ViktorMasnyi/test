@@ -1,0 +1,25 @@
+.taskSelector__wrapper {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  height: 100vh;
+  width: 100%;
+}
+
+.taskSelector__task, .taskSelector__task:visited {
+  width: 300px;
+  height: 100px;
+  background-color: #f8f8f8;
+  border: 2px solid #d8d4d4;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  color: #999;
+  font-size: 48px;
+  text-decoration: none;
+}

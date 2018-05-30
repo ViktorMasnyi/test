@@ -1,10 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import './TaskSelector.css';
+
 const TaskSelector = () => (
-  <div>
-    <Link to="/club" className="">Visit CLUB task page</Link>
-    <Link to="/blog" className="">Visit BLOG task page</Link>
+  <div className="taskSelector__wrapper">
+    <div className="taskSelector__container">
+      <Link to="/club" className="taskSelector__task">CLUB task</Link>
+    </div>
+    <div className="taskSelector__container">
+      <Link to="/blog" className="taskSelector__task">BLOG task</Link>
+    </div>
   </div>
 );
 

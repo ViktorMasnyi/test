@@ -21,17 +21,14 @@ class Blog extends Component {
     }
 
     postDismissHandler = () => {
-        console.log('bang!!')
         this.setState({selectedPost: null})
     }
 
     handleSearch = (searchStr) => {
         let searchQuery = searchStr.toLowerCase();
-        console.log(searchQuery.lenght);
         let foundPosts = this.state.posts.filter(el => el.title.toLowerCase()
             .indexOf(searchQuery) !== -1);
         this.setState({foundPosts: foundPosts, isSearchActive: true});
-        //if (searchStr.lenght === 0) this.setState({isSearchActive: false});
     }
 
     handleSearchReset = (event) => {
