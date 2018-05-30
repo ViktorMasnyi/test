@@ -1,7 +1,6 @@
 import React from 'react';
 
 import './BottomMenu.css';
-import plus from '../../../images/plus.png';
 
 const BottomMenu = () => (
   <nav className="bottomMenu__wrapper">
