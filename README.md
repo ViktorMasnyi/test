@@ -7,7 +7,7 @@ Powered by ReactJS
 # Home Page:
 - contains two links for Blog Page and Layout page
 - 404 page implemented
-- navigation implemented by React Router v.4
+- rouning implemented by using React Router v.4
 
 # Blog Page:
 - Fetch posts from remote API by using GET request
