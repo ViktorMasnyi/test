@@ -1,4 +1,4 @@
-# Knowledge testing system 
+# Test 
 
 This project was made according to requirements stated in task description.
 
