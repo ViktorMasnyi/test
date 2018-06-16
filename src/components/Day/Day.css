@@ -1,0 +1,21 @@
+.day {
+  position: relative;
+  min-height: 400px;
+  box-sizing: border-box;
+  background: #fff;
+  width: calc(100% / 12 * 3 - 32px);
+  margin: 0px;
+  border-left: 2px solid #cc5;
+}
+
+.day:last-child {
+  border: none;
+}
+
+.dayLabel {
+  width: 100%;
+  top: 0;
+  box-sizing: border-box;
+  padding: 0 5px;
+  background: #fff;
+}

@@ -11,6 +11,9 @@ const TaskSelector = () => (
     <div className="taskSelector__container">
       <Link to="/blog" className="taskSelector__task">BLOG task</Link>
     </div>
+    <div className="taskSelector__container">
+      <Link to="/calendar" className="taskSelector__task">calendar</Link>
+    </div>
   </div>
 );
 
