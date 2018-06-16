@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import Week from '../../components/Week/Week';
 
-const tasks = [
-  {
-    id: 1,
-    author: 'Test Author',
-    content: 'test content',
-    start: '',
-    finish: '',
-  },
-];
+// const tasks = [
+//   {
+//     id: 1,
+//     author: 'Test Author',
+//     content: 'test content',
+//     start: '',
+//     finish: '',
+//   },
+// ];
 
 class Calendar extends Component {
   state = {

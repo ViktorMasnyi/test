@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Task from '../Task/Task';
 
 import './Day.css';
 

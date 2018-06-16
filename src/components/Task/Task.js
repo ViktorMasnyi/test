@@ -11,7 +11,8 @@ const Task = props => (
     className="task"
   >
     len: {props.taskLengh},
-    slot: {props.slot}
+    slot: {props.slot},
+    d: {props.weekday}
   </div>
 );
 
