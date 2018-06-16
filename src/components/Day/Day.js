@@ -6,22 +6,30 @@ import './Day.css';
 class Day extends Component {
   constructor(props) {
     super(props)
-    let sortedTasks = this.props.dayTasks.sort(
+    let sortedTasks = [...this.props.dayTasks.sort(
       function sort(taskA, taskB) { // don't work  - clean up!
         //console.log(taskB.length);
         //console.log(taskA.props.taskLengh > taskB.props.taskLengh);
-        return taskA.length - taskB.length}
-    );
-    console.log(sortedTasks);
+        return taskB.length - taskA.length}
+    )];
+    //console.log(sortedTasks);
+    this.state = {
+      dayTasks: sortedTasks
+    };
   }
+
+  getOccSlots = () => {
+    return true;
+  }
+
   render() {
-    let tasks = this.props.dayTasks.map((task, id) => {
+    let tasks = this.state.dayTasks.map((task, id) => {
         return (
           <Task
             key={`taskId${id}`}
             weekday={this.props.weekday}
             taskLengh={task.length} // 1...20
-            slot={this.props.dayTasks.length - id}
+            slot={id}
             owner={task.owner}
             content={task.content}
           />
