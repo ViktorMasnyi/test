@@ -85,6 +85,20 @@ class Week extends Component {
           onwer: 'Test Owner',
           content: 'test content',
           start: 1,
+          length: 1,
+        },
+        {
+          id: 1,
+          onwer: 'Test Owner',
+          content: 'test content',
+          start: 1,
+          length: 1,
+        },
+        {
+          id: 1,
+          onwer: 'Test Owner',
+          content: 'test content',
+          start: 1,
           length: 2,
         },
         {
@@ -99,61 +113,35 @@ class Week extends Component {
           owner: 'Test Owner',
           content: 'test content',
           start: 2,  // starting day of a week
-          length: 4, // task duration  - days
+          length: 5, // task duration  - days
+        },
+        {
+          id: 1,
+          onwer: 'Test Owner',
+          content: 'test content',
+          start: 1,
+          length: 5,
         },
       ],
     ],
   };
 
-
-
   render () {
+    //console.log(this.props)
     let days = this.state.days.map((day, i) => {
       return (
-        <Day key={`dayId${i}`} weekday={this.props.startDate + 4 - i}>
-          {
-            day.map((task, id) => {
-              return (
-                <Task
-                  key={`taskId${id}`}
-                  weekday={this.props.startDate + 4 - i}
-                  taskLengh={task.length} // 1...20
-                  slot={day.length - task.length}
-                  owner={task.owner}
-                  content={task.content}
-                />
-              );
-            }).sort(function sort(taskA, taskB) { // don't work  - clean up!
-              //console.log(taskB.props.taskLengh);
-              console.log(taskA.props.taskLengh > taskB.props.taskLengh);
-              return taskA.props.taskLengh < taskB.props.taskLengh})
-          }
-        </Day>
+        <Day
+          key={`dayId${i}`}
+          weekday={this.props.startDate + 4 - i}
+          dayTasks={day}  
+        />          
       );
     });
+    //console.log(days);
     return (
       <div className="container">
         <div className="week">
           {days}
-          {/* <Day weekday={this.props.startDate + 4}>
-          </Day>
-          <Day weekday={this.props.startDate + 3}>
-            <Task taskWidth="taskWidth1" slot="slot3" />
-            <Task taskWidth="taskWidth2" slot="slot4" />
-            <Task taskWidth="taskWidth1" slot="slot5" />
-          </Day>
-          <Day weekday={this.props.startDate + 2}>
-          </Day>
-          <Day weekday={this.props.startDate + 1}>
-            <Task taskWidth="taskWidth1" slot="slot2" />
-          </Day>
-          <Day weekday={this.props.startDate}>
-            <Task taskWidth="taskWidth5" slot="slot1" />
-            <Task taskWidth="taskWidth1" slot="slot2" />
-            <Task taskWidth="taskWidth3" slot="slot3" />
-            <Task taskWidth="taskWidth2" slot="slot4" />
-            <Task taskWidth="taskWidth1" slot="slot5" />
-          </Day> */}
         </div>
       </div>
     );
