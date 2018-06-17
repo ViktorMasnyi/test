@@ -1,8 +1,6 @@
-.container {
-  min-width: 790px;
-  font-size: 16px;
-}
 .week {
   display: flex;
   flex-flow: row-reverse;
+  min-width: 790px;
+  font-size: 16px;
 }

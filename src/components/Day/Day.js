@@ -10,7 +10,9 @@ class Day extends Component {
       function sort(taskA, taskB) { // don't work  - clean up!
         //console.log(taskB.length);
         //console.log(taskA.props.taskLengh > taskB.props.taskLengh);
-        return taskB.length - taskA.length}
+        
+        return taskA.placeHolder ? false : taskB.length - taskA.length
+      }
     )];
     //console.log(sortedTasks);
     this.state = {
@@ -27,6 +29,7 @@ class Day extends Component {
         return (
           <Task
             key={`taskId${id}`}
+            placeHolder={task.placeHolder}
             weekday={this.props.weekday}
             taskLengh={task.length} // 1...20
             slot={id}

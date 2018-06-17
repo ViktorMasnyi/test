@@ -3,48 +3,29 @@
   box-sizing: border-box;
   width: calc((100%) * 1 - 4px);
   margin-left: 2px;
-  padding: 0px 2px;
+  padding: 13px 2px;
   margin-bottom: 4px;
-  background-color:rgba(20, 20, 60, 0.5); 
-  overflow: visible; 
+  background-color:rgba(106, 132, 255, 0.5);
 }
 
-/* .taskWidth1 {
-  width: calc((100%) * 1 - 4px); 
-} */
-
-.taskWidth2 {
-  width: calc((100%) * 2 - 4px);
+.ltask::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -22px;
+  width: 0;
+	height: 0;
+	border-top: 22px solid transparent;
+	border-left: 22px solid rgba(106, 132, 255, 0.5);
+	border-bottom: 22px solid transparent;
 }
 
-.taskWidth3 {
-  width: calc((100%) * 3 - 3px);
-}
-
-.taskWidth4 {
-  width: calc((100%) * 4 - 4px);
-}
-
-.taskWidth5 {
-  width: calc((100%) * 5 - 4px);
-}
-
-.slot1 {
-  top: calc(22px * 1);
-}
-
-.slot2 {
-  top: calc(22px * 2);
-}
-
-.slot3 {
-  top: calc(22px * 3);
-}
-
-.slot4 {
-  top: calc(22px * 4);
-}
-
-.slot5 {
-  top: calc(22px * 5);
+.placeholder {
+  position: absolute;
+  top: 50px;
+  box-sizing: border-box;
+  width: calc((100%) * 1 - 4px);
+  margin-left: 2px;
+  padding: 13px 2px;
+  margin-bottom: 4px;
 }

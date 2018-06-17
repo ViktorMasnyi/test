@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Week from '../../components/Week/Week';
 
+import './Calendar.css';
+
 // const tasks = [
 //   {
 //     id: 1,
@@ -134,7 +136,9 @@ class Calendar extends Component {
   };
   render() {
     return (
-      <Week startDate={this.state.startDate} weekTasks={this.state.days}/>
+      <div className="container">
+        <Week startDate={this.state.startDate} weekTasks={this.state.days}/>
+      </div>
     );
   }
 }

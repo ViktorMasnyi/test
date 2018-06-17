@@ -11,10 +11,18 @@ class Week extends Component {
       [ // Fr
         {
           id: 3,
-          onwer: 'Test Owner',
+          placeHolder: true,
+          owner: 'Test Owner1111',
           content: 'test content',
           start: 2,
           length: 1,
+        },
+        {
+          id: 3,
+          owner: 'Test Owner',
+          content: 'test content',
+          start: 2,
+          length: 2,
         },
         {
           id: 4,
@@ -25,13 +33,13 @@ class Week extends Component {
         },
       ],
       [ // Th
-        // {
-        //   id: 3,
-        //   onwer: 'Test Owner',
-        //   content: 'test content',
-        //   start: 2,
-        //   length: 1,
-        // },
+        {
+          id: 3,
+          onwer: 'Test Owner',
+          content: 'test content',
+          start: 2,
+          length: 3,
+        },
         // {
         //   id: 4,
         //   owner: 'Test Owner',
@@ -99,7 +107,7 @@ class Week extends Component {
           onwer: 'Test Owner',
           content: 'test content',
           start: 1,
-          length: 16,
+          length: 3,
         },
         {
           id: 1,
@@ -151,10 +159,10 @@ class Week extends Component {
     });
     //console.log(days);
     return (
-      <div className="container">
+      
         <div className="week">
           {days}
-        </div>
+        
       </div>
     );
   }
