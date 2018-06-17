@@ -7,21 +7,11 @@ class Day extends Component {
   constructor(props) {
     super(props)
     let sortedTasks = [...this.props.dayTasks.sort(
-      function sort(taskA, taskB) { // don't work  - clean up!
-        //console.log(taskB.length);
-        //console.log(taskA.props.taskLengh > taskB.props.taskLengh);
-        
-        return taskA.placeHolder ? false : taskB.length - taskA.length
-      }
+      (taskA, taskB) => taskA.placeHolder ? false : taskB.length - taskA.length      
     )];
-    //console.log(sortedTasks);
     this.state = {
       dayTasks: sortedTasks
     };
-  }
-
-  getOccSlots = () => {
-    return true;
   }
 
   render() {

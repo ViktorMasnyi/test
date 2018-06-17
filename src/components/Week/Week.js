@@ -38,47 +38,12 @@ class Week extends Component {
           onwer: 'Test Owner',
           content: 'test content',
           start: 2,
-          length: 3,
+          length: 10,
         },
-        // {
-        //   id: 4,
-        //   owner: 'Test Owner',
-        //   content: 'test content',
-        //   start: 2,
-        //   length: 2,
-        // },
       ],
       [  // We
-        // {
-        //   id: 3,
-        //   onwer: 'Test Owner',
-        //   content: 'test content',
-        //   start: 2,
-        //   length: 1,
-        // },
-        // {
-        //   id: 4,
-        //   owner: 'Test Owner',
-        //   content: 'test content',
-        //   start: 2,
-        //   length: 1,
-        // },
       ],
       [  // Tu
-        // {
-        //   id: 1,
-        //   onwer: 'Test Owner',
-        //   content: 'test content',
-        //   start: 2,
-        //   length: 2,
-        // },
-        // {
-        //   id: 1,
-        //   onwer: 'Test Owner',
-        //   content: 'test content',
-        //   start: 2,
-        //   length: 1,
-        // }, 
       ],
       [ // Mo
         {
@@ -125,20 +90,7 @@ class Week extends Component {
       return day.map((task,) => task.length)
         .sort((lenA, lenB) => lenB - lenA)
     });
-    // let occStatus = occ[4];
-    // for (let day = 4 ; day >= 0; day--) {
-    //   occ[day].forEach((taskLen, slot) => {
-    //     //console.log('taskLen', taskLen);
-    //     if (taskLen > 1) {
-    //       for (let nextDay = day - 1; nextDay >= 0; nextDay--) {
-    //         console.log('taskLen', taskLen);
-    //         occStatus[nextDay].push(slot)
-    //       }
-    //     }
-    //   })
-    // }
     this.setState({occ: occ})
-    console.log('occ', occ);
   }
 
   componentWillMount() {
@@ -146,7 +98,6 @@ class Week extends Component {
   }
 
   render () {
-    //console.log(this.props)
     let days = this.state.days.map((day, i) => {
       return (
         <Day
@@ -157,12 +108,9 @@ class Week extends Component {
         />          
       );
     });
-    //console.log(days);
-    return (
-      
-        <div className="week">
-          {days}
-        
+    return (      
+      <div className="week">
+        {days}        
       </div>
     );
   }
