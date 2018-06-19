@@ -7,7 +7,7 @@ Powered by ReactJS
 # Home Page:
 - contains two links for Blog Page and Layout page
 - 404 page implemented
-- rouning implemented by using React Router v.4
+- routning implemented by using React Router v.4
 
 # Blog Page:
 - Fetch posts from remote API by using GET request
@@ -17,7 +17,14 @@ Powered by ReactJS
 - Showing of raw data of the selected post inside popup
 
 # Layout Page:
-- mobile layout is implemented only (due to lack of time)
+- mobile layout is implemented only
+
+# Calendar page - week view
+- Flexbox CSS grid emulation is used 
+- Task items are sorted by task length
+- Long tasks that overflow the week span automatically apply special styling
+- Empty slots are filled by placeholders, 
+  to avoid tasks overlapping on vertical axis
 
 # To check the project functionality: 
 Run in Development
