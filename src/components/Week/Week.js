@@ -104,7 +104,6 @@ class Week extends Component {
           key={`dayId${i}`}
           weekday={this.props.startDate + 4 - i}
           dayTasks={day}
-          occ={this.state.occ}
         />          
       );
     });

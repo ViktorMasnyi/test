@@ -14,11 +14,7 @@ const Task = props => {
               ? (6.1 - props.weekday)
               : props.taskLengh} - 4px)`,
         }}
-        className={`
-          task ${(props.taskLengh > 6 - props.weekday)
-            ? 'ltask'
-            : ''}          
-            `}
+        className={`task ${(props.taskLengh > 6 - props.weekday) ? 'ltask' : ''}`}
         >
           len: {props.taskLengh},
           slot: {props.slot},
