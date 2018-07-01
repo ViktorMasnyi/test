@@ -6,7 +6,6 @@ import NotFoundPage from '../../components/NotFoundPage/NotFoundPage';
 import TaskSelector from '../../components/TaskSelector/TaskSelector';
 import Calendar from '../../containers/Calendar/Calendar'
 
-
 const HomePage = () => (
   <Switch>
     <Route exact path="/" component={TaskSelector} />

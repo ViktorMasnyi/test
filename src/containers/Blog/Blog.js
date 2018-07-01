@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import axios from 'axios';
 
 import Post from '../../components/Post/Post';
 import Modal from '../../components/UI/Modal/Modal';
 import RawPost from '../../components/RawPost/RawPost';
+import { fetchData } from '../../containers/Blog/actions';
+
 import './Blog.css';
+
+
 
 class Blog extends Component {
     state = {
-        posts: [],
+        //posts: [],
         selectedPost: null,
         isSearchActive: false,
         foundPosts: [],
@@ -26,13 +31,13 @@ class Blog extends Component {
 
     handleSearch = (searchStr) => {
         let searchQuery = searchStr.toLowerCase();
-        let foundPosts = this.state.posts.filter(el => el.title.toLowerCase()
+        let foundPosts = this.props.posts.filter(el => el.title.toLowerCase()
             .indexOf(searchQuery) !== -1);
         this.setState({foundPosts: foundPosts, isSearchActive: true});
     }
 
     handleSearchReset = (event) => {
-        this.setState({isSearchActive: false})
+        this.setState({isSearchActive: false});
     }
 
     getContent = () => {
@@ -40,7 +45,7 @@ class Blog extends Component {
         axios.get('https://hn.algolia.com/api/v1/search_by_date?tags=story')
             .then(responce => {
                 const post = responce.data.hits;
-                console.log(post);
+                //console.log(post);
                 this.setState({posts: post})})
             .catch(error => {
                 this.setState({error: true})
@@ -48,18 +53,19 @@ class Blog extends Component {
     }
 
     componentDidMount() {
-        this.getContent();      
-        let timer = setInterval(this.getContent, 10000);
+        this.props.getData();
+        //this.getContent();      
+        let timer = setInterval(this.props.getData, 10000);
         this.setState({timer});        
     };
 
     componentWillUnmount() {
         clearInterval(this.state.timer);
     }
-    render () {
+    render () {        
         let posts = <p>something went wrong!</p>
-        if (!this.state.error && !this.state.isSearchActive) {
-            posts = this.state.posts.map(post => {
+        if (!this.props.error && !this.state.isSearchActive) {
+            posts = this.props.posts.map(post => {
                 return (
                     <Post 
                         key={post.objectID} 
@@ -82,8 +88,8 @@ class Blog extends Component {
                         clicked={() => this.postSelectedHandler(post)} />
                 );
             });
-        }        
-        
+        }
+
         return (
             <div className="container">
                 <Modal
@@ -128,4 +134,20 @@ class Blog extends Component {
     }
 }
 
-export default Blog;
+const mapStateToProps = state => {
+    return {
+        tst: state.test,
+        posts: state.posts,
+        error: state.error,
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        getTestValue: () => dispatch({type: 'TEST'}),
+        getData: () => dispatch(fetchData()),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Blog);
+//export default Blog;
