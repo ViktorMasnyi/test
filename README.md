@@ -10,7 +10,8 @@ Powered by ReactJS
 - routning implemented by using React Router v.4
 
 # Blog Page:
-- Fetch posts from remote API by using GET request
+- Managing Blog data with Redux
+- Fetch posts from remote API by calling GET request with Thunk
 - Updating posts list every 10 seconds
 - Display the title, url, created_at, and author of each post in a table.
 - Filtering of data inside table by title field
